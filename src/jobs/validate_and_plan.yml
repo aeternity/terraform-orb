@@ -1,0 +1,7 @@
+executor: default
+steps:
+  - checkout
+  - setup_secrets
+  - terraform_init
+  - terraform_validate
+  - terraform_plan
