@@ -1,3 +1,4 @@
+description: just terraform init command
 parameters:
   path:
     type: string

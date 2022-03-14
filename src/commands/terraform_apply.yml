@@ -1,3 +1,4 @@
+description: just terraform apply command
 parameters:
   plans_workspace:
     type: string
