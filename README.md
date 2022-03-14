@@ -9,6 +9,7 @@ A starter template for orb projects. Build, test, and publish orbs automatically
 Additional READMEs are available in each directory.
 
 
+
 ## Resources
 
 [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/aeternity/terraform-orb) - The official registry page of this orb for all versions, executors, commands, and jobs described.
@@ -16,7 +17,7 @@ Additional READMEs are available in each directory.
 
 ### How to Contribute
 
-We welcome [issues](https://github.com/aetenrity/terraformorb/issues) to and [pull requests](https://github.com/aetenrity/terraform-orb/pulls) against this repository!
+We welcome [issues](https://github.com/aetenrity/terrafor-orb/issues) to and [pull requests](https://github.com/aetenrity/terraform-orb/pulls) against this repository!
 
 ### How to Publish
 * Create and push a branch with your new features.
