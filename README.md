@@ -17,7 +17,7 @@ Additional READMEs are available in each directory.
 
 ### How to Contribute
 
-We welcome [issues](https://github.com/aetenrity/terrafor,-orb/issues) to and [pull requests](https://github.com/aetenrity/terraform-orb/pulls) against this repository!
+We welcome [issues](https://github.com/aeternity/terraform-orb/issues) to and [pull requests](https://github.com/aeternity/terraform-orb/pulls) against this repository!
 
 ### How to Publish
 * Create and push a branch with your new features.
@@ -38,3 +38,4 @@ Example: `[semver:major]`
 
 
 For further questions/comments about this or other orbs, visit the Orb Category of [CircleCI Discuss](https://discuss.circleci.com/c/orbs).
+
