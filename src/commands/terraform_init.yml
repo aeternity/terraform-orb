@@ -1,0 +1,12 @@
+parameters:
+  path:
+    type: string
+    default: "."
+  lock_timeout:
+    type: string
+    default: "5m"
+steps:
+  - run:
+      name: Terraform init
+      command: |
+        envdir /secrets terraform -chdir=<< parameters.path >> init -lock-timeout=<< parameters.lock_timeout >>
