@@ -1,4 +1,5 @@
 executor: default
+description: This job will run terraform init and plan
 steps:
   - checkout
   - setup_secrets
