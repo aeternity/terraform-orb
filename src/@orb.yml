@@ -7,8 +7,8 @@ description: >
 
 # This information will be displayed in the orb registry and is not mandatory.
 display:
-  home_url: "http://aeternity-foundation.org/s"
-  source_url: "https://www.github.com/aeternity/terraform-orb"
+  home_url: "http://aeternity-foundation.org/"
+  source_url: "https://www.github.com/aeternity/terraform-orb/"
 
 # If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
 # orbs:
