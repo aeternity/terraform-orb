@@ -1,9 +1,9 @@
 #!/bin/bash
-mkdir -p $(dirname "<< parameters.out >>")
-envdir /secrets terraform -chdir=<< parameters.path >> plan \
-       -lock-timeout=<< parameters.lock_timeout >> \
-       -parallelism=<< parameters.parallelism >> \
-       -out=<< parameters.out >> \
+mkdir -p $(dirname "${TERRAFORM_OUT}")
+envdir /secrets terraform -chdir=${TERRAFORM_PATH} plan \
+       -lock-timeout=${TERRAFORM_LOCK_TIMEOUT} \
+       -parallelism=${TERRAFORM_PARALLELISM} \
+       -out=${TERRAFORM_OUT} \
        -var vault_addr=${VAULT_ADDR:?} | tee terraform-plan-info
 
  export TERRAFORM_PLAN_INFO=`cat terraform-plan-info | grep Plan: | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g'`

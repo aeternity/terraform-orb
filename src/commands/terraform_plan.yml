@@ -18,6 +18,11 @@ parameters:
 steps:
   - run:
       name: Terraform plan
+      environment:
+        TERRAFORM_OUT: "<< parameters.out >>"
+        TERRAFORM_PATH: "<< parameters.path >>"
+        TERRAFORM_LOCK_TIMEOUT: "<< parameters.lock_timeout >>"
+        TERRAFORM_PARALLELISM: "<< parameters.parallelism >>"
       command: <<include(scripts/plan.sh)>>
 
   - persist_to_workspace:
