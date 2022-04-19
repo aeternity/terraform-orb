@@ -6,6 +6,8 @@ parameters:
 steps:
   - run:
       name: Terraform format check
+      environment:
+        TERRAFORM_PATH: "<< parameters.path >>"
       command: <<include(scripts/validate.sh)>>
 
   - run:
