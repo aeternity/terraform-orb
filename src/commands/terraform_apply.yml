@@ -24,6 +24,7 @@ steps:
   - run:
       name: Terraform apply
       command: |
+        #!/bin/bash
         TF_ARGS=""
         if [ "<< parameters.auto_approve >>" = "true" ]; then
             TF_ARGS="$TF_ARGS -auto-approve"
