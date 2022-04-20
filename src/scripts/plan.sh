@@ -16,4 +16,4 @@ curl -sSX POST \
             "description": "'"${TERRAFORM_PLAN_INFO}"'",
             "context": "terraform plan"
           }' \
-          https://api.github.com/repos/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/statuses/${CIRCLE_SHA1} > /dev/null
+          https://api.github.com/repos/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/statuses/${CIRCLE_SHA1}
