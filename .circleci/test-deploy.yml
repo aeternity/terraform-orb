@@ -6,7 +6,7 @@ jobs:
   # Define one or more jobs which will utilize your orb's commands and parameters to validate your changes.
   command-tests:
     docker:
-      - image: cimg/base:stable
+      - image: aeternity/infrastructure:v2.12.4
     steps:
       - checkout
       - terraform-orb/terraform_init
