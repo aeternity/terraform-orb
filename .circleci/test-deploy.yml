@@ -24,6 +24,9 @@ workflows:
   test-deploy:
     jobs:
       - setup_secrets:
+          filters:
+            tags:
+              only: /.*/
       - command-tests:
           filters:
             tags:
