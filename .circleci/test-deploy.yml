@@ -16,7 +16,7 @@ jobs:
       - image: aeternity/infrastructure:v2.12.4
     steps:
       - checkout
-      - setup-secrets
+      - setup_secrets
       - terraform-orb/terraform_init
       - terraform-orb/terraform_validate
       - terraform-orb/terraform_plan
