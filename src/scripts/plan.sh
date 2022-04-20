@@ -1,5 +1,7 @@
 #!/bin/bash
+echo "Creating dicectory for terraform out"
 mkdir -p "$(dirname "${TERRAFORM_OUT}")"
+echo "Generating secrets"
 envdir /secrets terraform -chdir=${TERRAFORM_PATH} plan \
        -lock-timeout=${TERRAFORM_LOCK_TIMEOUT} \
        -parallelism=${TERRAFORM_PARALLELISM} \
@@ -8,7 +10,7 @@ envdir /secrets terraform -chdir=${TERRAFORM_PATH} plan \
 
 TERRAFORM_PLAN_INFO=$(cat terraform-plan-info | grep Plan: | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g')a
 export TERRAFORM_PLAN_INFO
-curl -sSX POST \
+curl -X POST \
           -H "Authorization: token ${GITHUB_TOKEN}" \
           -d '{
             "state": "success",
