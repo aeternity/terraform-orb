@@ -10,7 +10,7 @@ envdir /secrets terraform -chdir=${TERRAFORM_PATH} plan \
        -var vault_addr=${VAULT_ADDR:?} | tee terraform-plan-info
 echo $?
 echo "Creating TERRAFORM_PLAN_INFO variable"
-TERRAFORM_PLAN_INFO=$(cat terraform-plan-info | grep Plan: | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g')a
+TERRAFORM_PLAN_INFO=$(cat terraform-plan-info | grep Plan: | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g')
 echo "Exporting TERRAFORM_PLAN_INFO variable"
 export TERRAFORM_PLAN_INFO
 echo $?
