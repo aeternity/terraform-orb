@@ -4,29 +4,21 @@ orbs:
   orb-tools: circleci/orb-tools@11.1
 jobs:
   # Define one or more jobs which will utilize your orb's commands and parameters to validate your changes.
-  setup_secrets:
-    docker:
-      - image: aeternity/infrastructure:v2.12.4
-    steps:
-      - run:
-          name: Setup environment secrets
-          command: cd /infrastructure && make secrets SECRETS_OUTPUT_DIR=/secrets
   command-tests:
     docker:
       - image: aeternity/infrastructure:v2.12.4
     steps:
       - checkout
-      - setup_secrets
+      - run:
+          name: Setup environment secrets
+          command: cd /infrastructure && make secrets SECRETS_OUTPUT_DIR=/secrets
       - terraform-orb/terraform_init
       - terraform-orb/terraform_validate
       - terraform-orb/terraform_plan
 workflows:
   test-deploy:
     jobs:
-      - setup_secrets:
-          filters:
-            tags:
-              only: /.*/
+
       - command-tests:
           filters:
             tags:
