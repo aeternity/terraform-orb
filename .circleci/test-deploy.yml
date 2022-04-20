@@ -9,7 +9,9 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - terraform-orb/terraform-init
+      - terraform-orb/terraform_init
+      - terraform-orb/terraform_validate
+      - terraform-orb/terraform_plan
 workflows:
   test-deploy:
     jobs:
