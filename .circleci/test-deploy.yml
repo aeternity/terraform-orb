@@ -4,7 +4,7 @@ orbs:
   orb-tools: circleci/orb-tools@11.1
 jobs:
   # Define one or more jobs which will utilize your orb's commands and parameters to validate your changes.
-  integration-test-1:
+  command-tests:
     docker:
       - image: cimg/base:stable
     steps:
