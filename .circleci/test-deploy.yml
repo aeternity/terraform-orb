@@ -11,10 +11,11 @@ jobs:
       - checkout
       - run:
           name: Setup environment secrets
-          command: mkdir /secrets && echo "PLACEHOLDER" >  /secrets/PLACEHOLDER
+          command: mkdir /secrets && echo "VAULT_ADDR" >  /secrets/VAULT_ADDR
       - terraform-orb/terraform_init
       - terraform-orb/terraform_validate
       - terraform-orb/terraform_plan
+
 workflows:
   test-deploy:
     jobs:
