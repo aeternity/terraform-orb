@@ -1,3 +1,4 @@
+description: just terraform init command
 parameters:
   path:
     type: string
@@ -8,5 +9,7 @@ parameters:
 steps:
   - run:
       name: Terraform init
-      command: |
-        envdir /secrets terraform -chdir=<< parameters.path >> init -lock-timeout=<< parameters.lock_timeout >>
+      environment:
+        TERRAFORM_PATH: "<< parameters.path >>"
+        TERRAFORM_LOCK_TIMEOUT: "<< parameters.lock_timeout  >>"
+      command: <<include(scripts/init.sh)>>

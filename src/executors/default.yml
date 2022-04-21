@@ -1,5 +1,5 @@
 description: >
-  aeternity
+  aeternity default infrastructure executor
 docker:
   - image: 'aeternity/infrastructure:<<parameters.tag>>'
 working_directory: /src

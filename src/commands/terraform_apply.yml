@@ -1,3 +1,4 @@
+description: just terraform apply command
 parameters:
   plans_workspace:
     type: string
@@ -21,14 +22,12 @@ steps:
   - attach_workspace:
       at: << parameters.plans_workspace >>
   - run:
+      environment:
+        TERRAFORM_AUTO_APPROVE: "<< parameters.auto_approve >>"
+        TERRAFORM_PATH: "<< parameters.path >>"
+        TERRAFORM_LOCK_TIMEOUT: "<< parameters.lock_timeout >>"
+        TERRAFORM_PARALLELISM: "<< parameters.parallelism >>"
+        TERRAFORM_IN: "<< parameters.in >>"
+
       name: Terraform apply
-      command: |
-        TF_ARGS=""
-        if [ "<< parameters.auto_approve >>" = "true" ]; then
-            TF_ARGS="$TF_ARGS -auto-approve"
-        fi
-        envdir /secrets terraform -chdir=<< parameters.path >> apply \
-          -lock-timeout=<< parameters.lock_timeout >> \
-          -parallelism=<< parameters.parallelism >> \
-          $TF_ARGS \
-          << parameters.in >>
+      command: <<include(scripts/apply.sh)>>

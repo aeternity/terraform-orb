@@ -1,4 +1,5 @@
 executor: default
+description: This job will run terraform and perform basic validation with plan
 steps:
   - checkout
   - setup_secrets

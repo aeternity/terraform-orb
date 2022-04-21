@@ -6,8 +6,10 @@ parameters:
 steps:
   - run:
       name: Terraform format check
-      command: |
-        terraform -chdir=<< parameters.path >> fmt -check=true -diff=true
+      environment:
+        TERRAFORM_PATH: "<< parameters.path >>"
+      command: <<include(scripts/validate.sh)>>
+
   - run:
       name: Terraform validate
       command: |
