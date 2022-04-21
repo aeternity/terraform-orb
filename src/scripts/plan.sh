@@ -9,7 +9,7 @@ envdir /secrets terraform -chdir=${TERRAFORM_PATH} plan \
 TERRAFORM_PLAN_INFO=$(cat terraform-plan-info | grep Plan: | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g')
 export TERRAFORM_PLAN_INFO
 
-curl -X POST \
+curl -sSX POST \
        -H "Authorization: token ${GITHUB_TOKEN}" \
        -d '{
             "state": "success",
