@@ -20,6 +20,7 @@ workflows:
   test-deploy:
     jobs:
       - command-tests:
+          context: orb-publishing
           filters:
             tags:
               only: /.*/
