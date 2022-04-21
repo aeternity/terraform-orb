@@ -15,7 +15,7 @@ jobs:
       - terraform-orb/terraform_init
       - terraform-orb/terraform_validate
       - terraform-orb/terraform_plan
-
+      - terraform-orb/terraform_apply
 workflows:
   test-deploy:
     jobs:
