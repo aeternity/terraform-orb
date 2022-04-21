@@ -3,6 +3,6 @@ variable "vault_addr" {
 }
 
 resource "local_file" "foo" {
-  content  = "foo!"
+  content  = "foo!bar"
   filename = "${path.module}/foo.bar"
 }
