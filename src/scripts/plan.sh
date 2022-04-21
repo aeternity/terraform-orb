@@ -3,6 +3,7 @@ echo "Creating dicectory for terraform out"
 mkdir -p "$(dirname "${TERRAFORM_OUT}")"
 echo $?
 echo "Generating secrets"
+envdir /secrets echo ${VAULT_ADDR}
 envdir /secrets terraform -chdir=${TERRAFORM_PATH} plan \
        -lock-timeout=${TERRAFORM_LOCK_TIMEOUT} \
        -parallelism=${TERRAFORM_PARALLELISM} \
