@@ -18,7 +18,6 @@ jobs:
 workflows:
   test-deploy:
     jobs:
-
       - command-tests:
           filters:
             tags:
