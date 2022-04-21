@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Setup environment secrets
-          command: mkdir /secrets && echo "VAULT_ADDR" >  /secrets/VAULT_ADDR
+          command: mkdir /secrets && echo "placeholder" >  /secrets/VAULT_ADDR
       - terraform-orb/terraform_init
       - terraform-orb/terraform_validate
       - terraform-orb/terraform_plan

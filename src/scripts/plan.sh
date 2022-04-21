@@ -6,6 +6,7 @@ echo "Generating secrets"
 ls -lah /secrets/
 cat /secrets/VAULT_ADDR
 envdir /secrets echo ${VAULT_ADDR}
+envdir /secrets terraform version
 envdir /secrets terraform -chdir=${TERRAFORM_PATH} plan \
        -lock-timeout=${TERRAFORM_LOCK_TIMEOUT} \
        -parallelism=${TERRAFORM_PARALLELISM} \
